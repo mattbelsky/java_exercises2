@@ -8,5 +8,14 @@ package part_01;
  *
  */
 public class Exercise_09 {
-
+    // a = width * height
+    // p = (width + height) * 2
+    public static void main(String[] args) {
+        double width = 2.4;
+        double height = 6.4;
+        double area = width * height;
+        double perimeter = (width + height) * 2;
+        System.out.println("Area: " + area);
+        System.out.println("Perimeter: " + perimeter);
+    }
 }

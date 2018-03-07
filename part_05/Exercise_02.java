@@ -1,7 +1,5 @@
 package part_05;
 
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
 /**
  * Write two classes. In Class_01 (which contains the main()) create an instance of Class_02 and pass that instance
  * to a method_01 within Class_01. Within method_01 you ust manipulate several private instance variables within

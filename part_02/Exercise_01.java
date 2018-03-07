@@ -1,5 +1,6 @@
 package part_02;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -15,6 +16,23 @@ import java.util.Scanner;
  */
 
 public class Exercise_01 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter a number:");
+        boolean valid = false;
 
-
+        // Loops until user inputs a valid double
+        do {
+            try {
+                double celsius = in.nextDouble();
+                double fahrenheit = 9 * (celsius / 5) + 32;
+                System.out.println(celsius + " degrees celsius = " + fahrenheit + " degrees fahrenheit");
+                valid = true;
+            } catch (InputMismatchException ime) {
+                System.out.println("Enter a valid number:");
+                in.next();
+            }
+        }
+        while (!valid);
+    }
 }

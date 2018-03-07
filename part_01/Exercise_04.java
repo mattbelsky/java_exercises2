@@ -11,6 +11,14 @@ package part_01;
  *
  */
 public class Exercise_04 {
-
-}
+     public static void main(String[] args) {
+         System.out.println("a\ta*2\ta*4");
+         for (int i = 1; i <= 4; i++) {
+             for (int j = 1; j <= 4; j *= 2) {
+                 System.out.print(i * j + "\t");
+             }
+             System.out.println();
+         }
+     }
+ }
 

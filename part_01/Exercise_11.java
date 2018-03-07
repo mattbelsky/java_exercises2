@@ -14,5 +14,15 @@ package part_01;
  */
 
 public class Exercise_11 {
+    public static void main(String[] args) {
+        double birthsPerMin = 60 / 6;
+        double deathsPerMin = 60 / 12;
+        double immigrantsPerMin = 60 / 40;
+        int population = 380123456;
+        double minPerYear = 60 * 24 * 365; // 60 min * 24 hrs * 365 days
 
+        // population += (births + immigrants - deaths) * 3
+        population += ((birthsPerMin + immigrantsPerMin) * minPerYear - (deathsPerMin * minPerYear)) * 3;
+        System.out.println(population);
+    }
 }

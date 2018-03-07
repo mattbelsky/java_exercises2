@@ -17,5 +17,18 @@ import java.util.Scanner;
  */
 
 public class Exercise_12 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
 
+        System.out.println("Enter the number of miles to drive:");
+        int distance = in.nextInt(); // miles
+        System.out.println("Enter the car's fuel economy in miles per gallon:");
+        int mpg = in.nextInt(); // miles per gallon
+        System.out.println("Enter the average price of fuel in the area you will be driving in:");
+        double priceFuel = in.nextDouble(); // price per gallon in USD
+
+        double tripCost = distance * (1. / mpg) * priceFuel; // cost = miles * (1 / (miles/gallon) * ($ / gallon)
+
+        System.out.println("$" + tripCost);
+    }
 }

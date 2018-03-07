@@ -11,5 +11,18 @@ package part_01;
  */
 
 public class Exercise_07 {
+    public static void main(String[] args) {
+        double pi = 4.0 * (1 + factor());
+        System.out.println(pi);
+    }
 
+    public static double factor() {
+        double sum = 0.0;
+        double y = -1.0;
+        for (int i = 3; i < 10000000; i += 2) {
+            sum += y / i;
+            y = -y;
+        }
+        return sum;
+    }
 }

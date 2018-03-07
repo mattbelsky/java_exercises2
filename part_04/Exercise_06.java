@@ -1,7 +1,5 @@
 package part_04;
 
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
 /**
 
  Implement, and populate a non-circular, consumptive queue (once a value has been retrieved
