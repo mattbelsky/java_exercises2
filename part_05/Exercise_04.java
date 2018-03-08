@@ -8,3 +8,81 @@ package part_05;
  * within each instance of Class_02 to modify Class_02's private instance variables.
  *
  */
+
+class BirthController {
+    public static void main(String[] args) {
+        Birth barry = new Birth("Barry", "1/3/1962");
+        Birth raj = new Birth("Raj", 3, 4, 2000);
+        Birth emma = new Birth("Emma", 12, 16, 1918);
+
+        barry.setName("Barack");
+        raj.setBirthDay(4);
+        emma.setBirthday("12/16/1918");
+    }
+}
+
+class Birth {
+    private String name;
+    private String birthday;
+    private int birthDay;
+    private int birthMonth;
+    private int birthYear;
+
+    public Birth(String name, String birthday) {
+        this.name = name;
+        this.birthday = birthday;
+    }
+
+    public Birth(String name, int birthDay, int birthMonth, int birthYear) {
+        this.name = name;
+        this.birthDay = birthDay;
+        this.birthMonth = birthMonth;
+        this.birthYear = birthYear;
+    }
+
+    public Birth(String name, int birthDay, int birthMonth) {
+        this.name = name;
+        this.birthDay = birthDay;
+        this.birthMonth = birthMonth;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public int getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(int birthDay) {
+        this.birthDay = birthDay;
+    }
+
+    public int getBirthMonth() {
+        return birthMonth;
+    }
+
+    public void setBirthMonth(int birthMonth) {
+        this.birthMonth = birthMonth;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
+    }
+
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+}

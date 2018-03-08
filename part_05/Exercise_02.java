@@ -9,11 +9,11 @@ package part_05;
  *
  */
 
-class Controller {
+class ViolinController {
     public static void main(String[] args) {
         Violin myViolin = new Violin();
 
-        // Displays properties, showing that instance variables HAVE NOT yet been initialized.
+        // Displays properties, showing that instance variables HAVE NOT yet been initialized manually
         displayProperties(myViolin);
 
         // Initializing myViolin's instance variables by passing object to initViolin.
