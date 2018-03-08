@@ -62,6 +62,7 @@ when you want to initialize its instance variables
 
 
 16) What does the finalize() method do?
+It runs code that you want to execute before garbage collection, therefore it helps an object to terminate cleanly.
 
 
 17) What does the "this" keyword do?
