@@ -13,6 +13,14 @@ package part_04;
 public class Exercise_05 {
 
     public static void main(String[] strings) {
+        int[] nums = new int[200];
 
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = i;
+        }
+
+        for (int num : nums) {
+            System.out.println(num);
+        }
     }
 }

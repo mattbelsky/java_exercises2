@@ -3,64 +3,84 @@ Answer the following questions
 
 
 1) What is an instance variable?
+A variable containing properties of an object
 
 
 2) How do you create a new object?
+Call the constructor.
 
 
 3) After creating a new object, how do you set that objects instance variables?
+Initialize them in the constructor.
 
 
 4) What is a reference variable? Why do you need to be careful with reference variables?
+A variable that refers to an object.
 
 
 5) How many methods can you have in a class?
+as many as desired
 
 
 6) How do you exit a method at any point?
+return
 
 
 7) What is the method signature required to return an "int" from a method?
+int method()
 
 
 8) Assuming "int num = 10", what is the syntax to return "num" from a method?
+return num;
 
 
 9) How do you pass a parameter to a method?
+Add it between the parentheses when calling the constructor.
 
 
 10) What is the method signature for a method named sum() that takes two int parameters and returns their sum as in int?
+int sum(int a, int b)
 
 
 11) What is a constructor?
-
+a method within the class sharing its name that instantiates its instance variables
 
 12) How does Java treat a class without a constructor?
+It creates a default constructor.
 
 
 13) What would the constructor for "public class Animal" look like?
+public Animal() { }
 
 
 14) What is the effect of passing parameters to a constructor?
+They can be used to initialize its instance variables.
 
 
 15) When should you pass parameters to a constructor?
+when you want to initialize its instance variables
 
 
 16) What does the finalize() method do?
 
 
 17) What does the "this" keyword do?
+It references a class's instance variables.
 
 
 18) When should you use the "this" keyword?
+when referencing a class's instance variables in order to avoid confusion
 
 
 19) Write an example of the "this" keyword in action.
+this.color = color;
 
 
-20.) EXplain the difference between static and non-static variables.
+20.) Explain the difference between static and non-static variables.
+Static variables belong to the class rather than an object and are referenced by calling Class.variable. They generally
+contain or refer to properties that are universal rather than something that would belong to a specific object.
 
 
 21.) Explain the difference between static and non-static methods.
+Same as static/non-static variables.
 

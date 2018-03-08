@@ -15,6 +15,22 @@ package part_04;
 public class Exercise_03 {
 
     public static void main(String[] strings) {
+        int[][] nums = new int[10][10];
 
+        // Initializes the array
+        for (int i = 0; i < 5; i++) {
+            nums[i][0] = i * 10;
+            for (int j = 1; j < 10; j++) {
+                nums[i][j] = j;
+            }
+        }
+
+        // Prints the array
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print(nums[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }

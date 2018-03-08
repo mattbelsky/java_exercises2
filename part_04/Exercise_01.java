@@ -1,8 +1,8 @@
 package part_04;
 
-import org.jcp.xml.dsig.internal.SignerOutputStream;
 
 import java.util.Scanner;
+
 /**
 
  Read in 10 integers from the user. Place all 10 integers into an array in the order they were received.
@@ -15,3 +15,21 @@ import java.util.Scanner;
  Output can be on one line or many lines. However you like.
 
  */
+
+class Exercise_01 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int[] nums = new int[10];
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = in.nextInt();
+        }
+
+        for (int i = 1; i < nums.length; i += 2) {
+            System.out.println(nums[i]);
+        }
+
+        for (int i = nums.length - 2; i >= 0; i -= 2) {
+            System.out.println(nums[i]);
+        }
+    }
+}
