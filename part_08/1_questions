@@ -1,26 +1,97 @@
 1) Describe the exception hierarchy.
 
+Throwable (class)
+
+ |                                      \
+
+Exception                               Error
+
+ |                                       \
+
+ExceptionSubClasses                     RuntimeException
+
+
 2) What is a try/catch statement?
+
+The code inside the try statement tries to run unless an error is thrown within it. Catch catches the error and executes
+the code within the catch statement.
+
 
 3) Why do we use try/catch statements?
 
+To prevent exceptions from crashing the program.
+
+
 4) Write a full example of a try/catch/finally statement that catches two distinct exceptions
+
+try {
+    // code that generates exceptions
+}
+catch (ExceptionType1 | ExceptionType2 e) {
+    // handles the exception that was caught
+}
+
 
 5) What does it mean to "throw" an exception? How does it work?
 
+In this context it means manually generating one by using the "throw" keyword and passing it an object.
+
+
 6) What happens if your application encounters an exception and you don't catch it or throw it?
+
+It crashes.
+
 
 7) When catching exception in an inheritance hierarchy, should you catch the subclass exception or the
 superclass exception first? Why?
 
+Subclass exceptions should be caught first because if superclass exceptions are caught first, the subclass ones will
+become unreachable.
+
+
 8) Write a nested try/catch statement.
+
+try {
+    try {
+        // code to try
+    }
+    catch (// Exception) {
+        // handles exception
+    }
+}
+catch (// Exception) {
+    // handles exception
+}
+
 
 9) What does it mean to rethrow an exception?
 
+catching an exception in an inner try/catch and throwing it to the outer one for it to deal with
+
+
 10) What are the 7 methods that come with the Throwable class?
+
+fillinStackTrace()
+getLocalizedMessage()
+getMessage()
+printStackTrace()
+printStackTrace(PrintStream stream)
+printStackTrace(PrintWriter stream)
+String toString()
+
 
 11) What does the "finally" block do?
 
+executes code that you want executed after an exception is generated
+
+
 12) When is the finally block executed? Will it ever not be executed?
 
+when code execution exits the try/catch block; no
+
+
 13) What are the three recently added features to Java exceptions?
+
+automatic resources management
+try-with-resources statement
+final rethrow / more precise rethrow
