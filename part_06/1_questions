@@ -1,22 +1,56 @@
 1) What is Java inheritance?
 
+a hierarchy of classes in which subclasses take on the properties of superclasses
+
+
 2) How does inheritance work?
+
+Superclasses are instantiated first, then subclasses. Subclasses can access superclass instance variables and methods
+from superclasses.
+
 
 3) What are some advantages that inheritance provides?
 
+supports encapsulation, cleaner & more organized code
+
+
 4) What does the "super" keyword do?
+
+calls instance variables & methods in the superclass
+
 
 5) In what order are constructors called when there are multiple subclasses?
 
+superclass -> subclass -> subclass
+
+
 6) What does it mean when a method is overridden?
+
+The method code in a subclass is called than that in the superclass.
+
 
 7) How do overridden methods support polymorphism?
 
+They allow a method to take different forms depending on the need.
+
+
 8) What is the difference between an overloaded method and an overridden method?
+
+Overloaded: The same method can take on additional or different arguments
+Overridden: The method sharing the same name in a superclass takes on a different form in the subclass
+
 
 9) What is dynamic method dispatch?
 
+It is a mechanism that allows overridden methods to be resolved at runtime rather than compile time as the method is
+called depending on the type of object being referred to rather than the type of reference variable.
+
 10) What does the "final" keyword do?
 
+It prevents an instance variable or method from being overridden.
+
+
 11) Are classes in Java are a subclass of what super class?
+
+Object
 

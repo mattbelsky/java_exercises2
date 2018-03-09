@@ -59,8 +59,7 @@ class Painting {
 
     // Paints a mix of two string colors.
     public void paint(String color1, String color2) {
-        // call convert() method to return RGB array value
-        // call mix() method which returns a single color
+        // call mix() method which calls convert() twice and returns two RGB colors to mix
         mix(color1, color2);
     }
 

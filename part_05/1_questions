@@ -2,32 +2,78 @@ Answer the following:
 
 1) What are the access control modifiers (acm) provided in Java?
 
+public, private, protected, default
+
+
 2) Briefly explain each acm and how they differentiate from each other?
+
+public: available to any other class
+private: only available to the class where they are defined
+protected: available to other classes within the same package as well as subclasses outside its package
+default: available to other classes within the same package only
+
 
 3) Why do we use acm's?
 
+prevents misuse of the object and enhances the data's encapsulation
+
+
 4) What is the risk of not using acm's?
+
+program errors
+
 
 5) Write a method signature that receives an object of type "Car" as a parameter.
 
+Car x(Car c)
+
 6) Write a method signature that returns an object of type "Car".
+
+Car x()
 
 7) What is a very important consideration to keep in mind when passing objects (hint: by reference) from one
 method to another?
 
+
+
 8) What is method overloading?
+
+the creation of multiple versions of a method that take different or additional arguments
+
 
 9) Why is method overloading useful? (Hint: as compared to the implementation in the C language.)
 
+to allow for different types of input
+
+
 10) How do you overload a method? What signifies that a method is being overloaded?
+
+Create a new method with additional or different types of parameters.
+
 
 11) Below, by writing just the method signature, demonstrate overloading a method 3 times.
 
+read(novel)
+read(article)
+read(novel, article)
+
+
 12) How do you overload a constructor? What signifies that a constructor is being overloaded?
+
+Create a new constructor with additional or different types of parameters.
+
 
 13) Why do we overload constructors?
 
+to allow for different types of input
+
+
 14) Below, by writing just the constructor signature, demonstrate overloading a constructor 3 times.
+
+public myClass(int x)
+public myClass(int x, String y)
+public myClass(String x, String y)
+
 
 15) What is recursion?
 
@@ -39,9 +85,18 @@ method to another?
 
 19) Explain what "static" is all about?
 
+Static instance variables and methods belong to the class itself and cannot be instantiated.
+
+
 20) When should you use "static"?
 
+when you are referencing a property pertaining to all objects created from that class
+
+
 21) What differentiates static variables from instance variables?
+
+Instance variables are instantiated with objects.
+
 
 22) What is a the quicksort? Briefly describe how the quicksort works.
 
@@ -54,5 +109,7 @@ method to another?
 26) What makes a variable-arity method unique? When should you use it?
 
 27) What is the shorthand name for variable-arity?
+
+varag
 
 28) Why important considerations must you keep in mind when using variable-arity methods? (hint: ambiguity)
