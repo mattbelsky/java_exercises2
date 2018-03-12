@@ -14,8 +14,21 @@ Complete the code so that it prints the following lines:
 
 **/
 
-public class Exercise_01 <T> {
+public class Exercise_01 {
 
+    private static <T> void printArray(T[] array) {
+        for (T element : array) {
+            System.out.println(element);
+        }
+    }
+
+    public static void main(String[] args) {
+        Integer[] nums = {1, 2, 3};
+        String[] words = {"Hello", "World"};
+
+        printArray(nums);
+        printArray(words);
+    }
 }
 
 
