@@ -12,8 +12,8 @@ class CodingChallenge7 {
         FileOutputStream out = null;
 
         try {
-            in = new FileInputStream("thefoxandthegrapes.txt"); // File not found -- why?
-            out = new FileOutputStream("encrypted.txt");
+            in = new FileInputStream("/home/matthew/Documents/CodingNomads/labs/java_labs_bali/part_09/thefoxandthegrapes.txt");
+            out = new FileOutputStream("/home/matthew/Documents/CodingNomads/labs/java_labs_bali/part_09/encrypted.txt");
             int value;
 
             while ((value = in.read()) != -1) {

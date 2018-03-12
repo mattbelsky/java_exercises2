@@ -9,10 +9,15 @@ package part_09;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Exercise_04 {
-
-
+    public static void main(String[] args) {
+        File foxGrapes = new File("/home/matthew/Documents/CodingNomads/labs/java_labs_bali/part_09/thefoxandthegrapes.txt");
+        Date dateModified = new Date (foxGrapes.lastModified());
+        foxGrapes.canWrite();
+        foxGrapes.setReadOnly();
+    }
 }
 
 
