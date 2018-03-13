@@ -83,13 +83,13 @@ public class Exercise_04 {
                 2 beats 1  */
             switch (player) {
                 case 0:
-                    status = (computer == 2) ? "You won!" : (computer == 1) ? "You lost" : "Idle";
+                    status = (computer == 2) ? "You won!" : "You lost";
                     break;
                 case 1:
-                    status = (computer == 0) ? "You won!" : (computer == 2) ? "You lost" : "Idle";
+                    status = (computer == 0) ? "You won!" : "You lost";
                     break;
                 case 2:
-                    status = (computer == 1) ? "You won!" : (computer == 0) ? "You lost" : "Idle";
+                    status = (computer == 1) ? "You won!" : "You lost";
 
             }
         }
