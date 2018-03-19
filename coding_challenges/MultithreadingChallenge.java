@@ -14,8 +14,8 @@ public class MultithreadingChallenge {
                 1)  Is there a way to execute this code block via a for loop?
                     I can create a string with the Runnable object names (part1, etc.) but I do not know how to convert
                     that to compilable code.
-                2)  Is it ok to give the thread object t a default modifier so I can access it here or is there a way
-                    to call join() if it's private?
+                2)  Is it ok to give the thread object t a default access modifier so I can access it here or is there
+                    a way to call join() if it's private?
              */
             MyThread part1 = new MyThread("theraven1.txt");
             part1.t.join();
