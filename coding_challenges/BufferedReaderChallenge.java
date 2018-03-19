@@ -5,14 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class BufferedReaderChallenge {
     public static void main(String[] args) {
         String path = "/home/matthew/Documents/CodingNomads/labs/java_labs_bali/coding_challenges/refugees_per_capita.csv";
-        String country = "";
         ArrayList<Refugees> refugeeData = new ArrayList();
-        Scanner input = new Scanner(System.in);
 
         // Reads the CSV file line by line and puts the data into an ArrayList of Refugee objects.
         try (FileReader fr = new FileReader(path); BufferedReader br = new BufferedReader(fr)) {
@@ -60,18 +57,25 @@ public class BufferedReaderChallenge {
         DecimalFormat newFormat = new DecimalFormat("0.00");
         long startTime = System.currentTimeMillis();
 
-        // Runs through each recorded year.
-            /*  Seems easier to just use these "magic numbers" as the data is already sorted and method calls to get the
-                min and max years would just use more resources. */
-        // lastJVal initializes j in the inner loop with 1 + the index of the last refugeeData object whose year = i
-            // Doing this rather than iterating through the entire list decreases the run time by a little less than half.
+        /*  Runs through each recorded year and the refugeeData objects that correspond to that year and sums and
+            displays the total population and refugee numbers for each year.
+
+            Note: it seems easier to just use the years as "magic numbers" since the data is already sorted, method
+            calls to get the min and max years would just use more resources, and we're not going to modify the file.
+
+            lastJVal initializes j in the inner loop with 1 + the index of the last refugeeData object whose year = i in
+            the latest iteration of the outer loop.
+
+            Doing this rather than iterating through the entire list decreases the run time by a little less than half
+            (3-6 ms vs 6-12 ms).
+         */
         int lastJVal = 0;
         for (int i = 2001; i <= 2015; i++) {
             double sumPop = 0.0;
             double sumRef = 0.0;
             int year = 0;
             try {
-                // Inner for loop will generate exception at the end of the data.
+                // Inner for loop will generate exception at the end of its run.
                 /*  min is where j is the first value of refugeeData where its year = i
                     max is where year is <= to i
                 */
