@@ -7,23 +7,18 @@ package coding_challenges;
     - Write the contents of all four files, in sequential order (1 -> 2 -> 3 -> 4) into file5.
  */
 
+import java.util.ArrayList;
+
 public class MultithreadingChallenge {
     public static void main(String[] args) {
         try {
-            /*  Couple questions:
-                1)  Is there a way to execute this code block via a for loop?
-                    I can create a string with the Runnable object names (part1, etc.) but I do not know how to convert
-                    that to compilable code.
-                2)  Is it ok to give the thread object t a default access modifier so I can access it here or is there
-                    a way to call join() if it's private?
-             */
-            MyThread part1 = new MyThread("theraven1.txt");
-            part1.t.join();
-            MyThread part2 = new MyThread("theraven2.txt");
-            part2.t.join();
-            MyThread part3 = new MyThread("theraven3.txt");
-            part3.t.join();
-            MyThread part4 = new MyThread("theraven4.txt");
+            ArrayList<MyThread> threads = new ArrayList();
+
+            for (int i = 1; i <= 4; i++) {
+                MyThread t = new MyThread("theraven" + i + ".txt");
+                threads.add(t);
+                threads.get(i - 1).t.join();
+            }
         }
         catch (InterruptedException e) {
             // Do nothing.
