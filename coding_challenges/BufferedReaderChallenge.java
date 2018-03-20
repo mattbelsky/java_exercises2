@@ -9,9 +9,24 @@ import java.util.ArrayList;
 public class BufferedReaderChallenge {
     public static void main(String[] args) {
         String path = "/home/matthew/Documents/CodingNomads/labs/java_labs_bali/coding_challenges/refugees_per_capita.csv";
+
+        // Reads the CSV file, puts the data into an ArrayList, then sums the population and refugee numbers by year and
+        // calculates and displays refugee/population ratio, and measures the run time.
+        long startTime = System.currentTimeMillis();
+
+        ArrayList<Refugees> refugeeData = readFile(path);
+        sumAndRatioRefugees(refugeeData);
+
+        long endTime = System.currentTimeMillis();
+        long timeElapsed = endTime - startTime;
+
+        System.out.println(timeElapsed + " milliseconds to execution.");
+    }
+
+    // Reads the CSV file line by line and puts the data into an ArrayList of Refugee objects, which is returned.
+    public static ArrayList<Refugees> readFile(String path) {
         ArrayList<Refugees> refugeeData = new ArrayList();
 
-        // Reads the CSV file line by line and puts the data into an ArrayList of Refugee objects.
         try (FileReader fr = new FileReader(path); BufferedReader br = new BufferedReader(fr)) {
 
             String sCurrentLine;
@@ -26,24 +41,21 @@ public class BufferedReaderChallenge {
                 // If population is not set
                 try {
                     obj.setPopulation(Double.parseDouble(data[3]));
-                }
-                catch (NumberFormatException e) {
+                } catch (NumberFormatException e) {
                     obj.setPopulation(0.0);
                 }
 
                 // If number of refugees is not set
                 try {
                     obj.setRefugees(Double.parseDouble(data[4]));
-                }
-                catch (ArrayIndexOutOfBoundsException e) {
+                } catch (ArrayIndexOutOfBoundsException e) {
                     obj.setRefugees(0.0);
                 }
 
                 // If refugees per capita is not listed
                 try {
                     obj.setRefPerCap(Double.parseDouble(data[5]));
-                }
-                catch (ArrayIndexOutOfBoundsException e) {
+                } catch (ArrayIndexOutOfBoundsException e) {
                     obj.setRefPerCap(0.0);
                 }
 
@@ -53,9 +65,12 @@ public class BufferedReaderChallenge {
             e.printStackTrace();
         }
 
-        // sum of recorded population for each year & the sum of the refugee numbers over time & the ratio of refs/pop
+        return refugeeData;
+    }
+
+    // Sums the recorded population for each year & the refugee numbers over time & displays the ratio of refs/pop.
+    public static void sumAndRatioRefugees(ArrayList<Refugees> refugeeData) {
         DecimalFormat newFormat = new DecimalFormat("0.00");
-        long startTime = System.currentTimeMillis();
 
         /*  Runs through each recorded year and the refugeeData objects that correspond to that year and sums and
             displays the total population and refugee numbers for each year.
@@ -86,8 +101,7 @@ public class BufferedReaderChallenge {
                     }
                     lastJVal = j + 1;
                 }
-            }
-            catch (IndexOutOfBoundsException e) {
+            } catch (IndexOutOfBoundsException e) {
                 // Do nothing.
             }
 
@@ -98,9 +112,5 @@ public class BufferedReaderChallenge {
             System.out.println("During the recorded period, refugees accounted for " +
                     newFormat.format(sumRef / sumPop * 100) + "% of the global population.\n");
         }
-
-        long endTime = System.currentTimeMillis();
-        long timeElapsed = endTime - startTime;
-        System.out.println(timeElapsed + " milliseconds to execution.");
     }
 }
