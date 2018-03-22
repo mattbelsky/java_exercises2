@@ -23,7 +23,6 @@ public class MyThread implements Runnable {
         String outputFileName = "theraven.txt";
 
         text = read(path + inputFileName);
-
         write(text,path + outputFileName);
     }
 
